@@ -10,6 +10,7 @@ import { BatchesComponent } from './shared/components/raw-data/batches/batches.c
 import { EmployeesComponent } from './shared/components/raw-data/employees/employees.component';
 import { HeaderComponent } from './core/layouts/header/header.component';
 import { FooterComponent } from './core/layouts/footer/footer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FooterComponent } from './core/layouts/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
