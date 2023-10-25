@@ -1,1 +1,26 @@
-<p>file-upload works!</p>
+<div class="container-xl">
+    <h3 class="my-5 text-uppercase">Upload:</h3>
+
+    <div class="col-10 box-layout">
+        <div class="upload-type d-flex align-items-center mb-5">
+            <p class="mb-0 mr-3">Upload Type:</p>
+            <div ngbDropdown class="mx-3">
+                <button class="btn btn-outline-primary" id="selectButton" ngbDropdownToggle>{{selectedOption}}</button>
+                <div ngbDropdownMenu aria-labelledby="selectButton">
+                  <button class="dropdown-item" (click)="selectOption('Training Dashboard')">Training Dashboard</button>
+                  <button class="dropdown-item" (click)="selectOption('Employee Master')">Employee Master</button>
+                </div>
+            </div>
+        </div>
+        <div class="file-upload">
+            <div class="file-select">
+              <div class="file-select-button" id="fileName">Choose File</div>
+              <div class="file-select-name" id="noFile">{{updateFileName}}</div> 
+              <input type="file" name="chooseFile" id="chooseFile" (change)="onFileSelected($event)">
+            </div>
+            <div *ngIf="uploadSuccessful" class="upload-msg text-success">File upload successful</div>
+            <div *ngIf="uploadFailed" class="upload-msg text-danger">File upload failed. Please try again.</div>
+            <button class="btn btn-primary text-uppercase mt-3" (click)="uploadFile()">Upload</button>
+        </div>
+    </div>
+</div>

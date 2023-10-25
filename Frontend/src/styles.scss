@@ -1,4 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+body, html {
+    min-height: 100%;
+    height: 100%;
+}
+
+.box-layout {
+    border: 1px solid #e2eefd;
+    padding: 50px 20px;
+    transition: all ease-in-out 0.3s;
+    background: #fff;
+}
+
+.btn-primary {
+    padding: 8px 35px 10px 35px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}

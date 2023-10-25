@@ -11,6 +11,7 @@ import { EmployeesComponent } from './shared/components/raw-data/employees/emplo
 import { HeaderComponent } from './core/layouts/header/header.component';
 import { FooterComponent } from './core/layouts/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
