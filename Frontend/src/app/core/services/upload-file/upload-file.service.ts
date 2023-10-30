@@ -6,23 +6,21 @@ import Constants from '../../constants/constants';
   providedIn: 'root'
 })
 export class UploadFileService {
-
+  
   constructor(private http: HttpClient) { }
 
   uploadFile(uploadType: string, file: File) {
     let apiEndpoint: string;
 
-    if(uploadType === 'Training Dashboard') {
+    if(uploadType === Constants.TrainingDashboard) {
       apiEndpoint = Constants.ImportTrainingDashboard;
     }
 
-    else if (uploadType === 'Employee Master') {
+    else if (uploadType === Constants.EmployeeMaster) {
       apiEndpoint = Constants.ImportEmployeeMaster;
     }
 
     else {
-      // Handle other upload types or errors as needed.
-      console.error('Invalid upload type');
       return;
     }
 

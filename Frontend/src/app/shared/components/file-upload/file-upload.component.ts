@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, Subject, observable } from 'rxjs';
 import { UploadFileService } from 'src/app/core/services/upload-file/upload-file.service';
 
 @Component({
@@ -13,6 +14,8 @@ export class FileUploadComponent implements OnInit {
   updateFileName: string = 'No file chosen...';
   uploadSuccessful: boolean = false;
   uploadFailed: boolean = false;
+  uploadError: string = '';
+  uploadSuccess: boolean = false;
 
   constructor(private uploadFileService: UploadFileService) {}
 
@@ -25,25 +28,32 @@ export class FileUploadComponent implements OnInit {
     const file: File | null = inputElement.files ? inputElement.files[0] : null;
   
     if (file) {
-      console.log(file.name);
-      this.selectedFile = file;
-      this.updateFileName = file.name;
+      if(file.name.endsWith('.xls') || file.name.endsWith('.xlsx')) {
+        console.log(file.name);
+        this.selectedFile = file;
+        this.updateFileName = file.name;
+        this.uploadFailed = false;
+        this.uploadError = '';
+        this.uploadSuccess = true
+      }
+      else {
+        this.uploadFailed = true;
+      }
     }
   }
 
   uploadFile() {
     this.uploadFileService.uploadFile(this.selectedOption, this.selectedFile!)?.subscribe(
       (res) => {
-        console.log('upload successful', res)
         this.updateFileName = 'No file chosen...';
         this.selectedFile = null; 
         this.uploadSuccessful = true;
-        this.uploadFailed = false;
+        this.uploadError = '';
         this.hideAnimatedDiv();
       },
       (error) => {
         console.log('upload failed', error);
-        this.uploadFailed = true;
+        this.uploadError = error.message;
         this.uploadSuccessful = false;
        this.hideAnimatedDiv();
       }

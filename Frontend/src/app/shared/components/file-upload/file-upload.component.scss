@@ -1,5 +1,6 @@
-.file-upload{display:block;max-width:420px;font-size: 12px;}
+.file-upload{display:block;font-size: 12px;}
 .file-upload .file-select{display:block;border: 2px solid #deebfd;color: #34495e;cursor:pointer;height:40px;line-height:40px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
+.file-upload .file-select.file-uploaded {border-color:#218754!important }
 .file-upload .file-select .file-select-button{background:#e7f1fd;letter-spacing:1px;color: #106eea;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
 .file-upload .file-select .file-select-name{display:inline-block;padding:0 10px;top: 0;position: absolute;bottom: 0;width: 100%;}
 .file-upload .file-select:hover{border-color:#106eea;transition:all .2s ease-in-out;}
@@ -11,3 +12,37 @@
 .file-upload .file-select.file-select-disabled:hover .file-select-button{background:#dce4ec;color:#666666;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
 .file-upload .file-select.file-select-disabled:hover .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
 .upload-msg {padding: 5px 10px;border: 1px solid;margin-top: 20px;font-weight: 500;transition:all .2s ease-in-out;}
+.title-upload {font-family: "Poppins", sans-serif;font-weight: 600;margin: 0 0 30px;}
+#selectButton {
+    border-radius: 0px;
+    border: 2px solid;
+    color: #2e2e2e;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upload-type {
+    margin-bottom: 40px;
+}
+
+.dropdown-menu {
+    border: 1px solid;
+    border-radius: 0;
+    width: 100%;
+}
+
+.dropdown-item {
+    border-bottom: 1px solid #dfdfdf;
+
+    &:last-child {
+        border-bottom: 0;
+    }
+}
+
+.file-upload .btn-primary {
+    width: 100%;
+    border-radius: 0;
+    margin: 25px 0 30px;
+}
