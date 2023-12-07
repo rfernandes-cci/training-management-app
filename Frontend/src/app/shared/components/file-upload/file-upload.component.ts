@@ -29,7 +29,6 @@ export class FileUploadComponent implements OnInit {
   
     if (file) {
       if(file.name.endsWith('.xls') || file.name.endsWith('.xlsx')) {
-        console.log(file.name);
         this.selectedFile = file;
         this.updateFileName = file.name;
         this.uploadFailed = false;
@@ -52,7 +51,6 @@ export class FileUploadComponent implements OnInit {
         this.hideAnimatedDiv();
       },
       (error) => {
-        console.log('upload failed', error);
         this.uploadError = error.message;
         this.uploadSuccessful = false;
        this.hideAnimatedDiv();

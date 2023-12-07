@@ -30,3 +30,71 @@ body, html {
     font-weight: 600;
     margin: 0 0 30px;
 }
+
+thead th {
+    min-width: 150px;
+}
+
+.page-numbers {
+    font-size: 20px;
+}
+
+.pagination li{
+
+    &.icons {
+        font-size: 30px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    &.page-listings {
+        font-size: 20px;
+        margin: 0 15px;
+    }
+}
+
+.checkbox-inputs {
+    padding: 0 20px 10px;
+
+    input {
+        margin-right: 7px;
+        font-weight: 600;
+    }
+
+    span {
+        margin-top: -1px;
+        font-weight: 500;
+    }
+}
+
+.show-columns {
+    border: 1px solid #e2e6e9;
+    margin-bottom: 20px;
+
+    h6 {
+        padding: 20px;
+        font-size: 20px;
+        border-bottom: 1px solid #e2e6e9;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    a {
+        padding: 0 20px 20px;
+        display: inline-block;
+    }
+}
+
+.btn-primary{
+    border-radius: 0;
+}
+
+.btn-primary.btn-filters {
+    background: none;
+    color: #212529;
+
+    &:active {
+        background: none;
+        color: #212529;
+    }
+}

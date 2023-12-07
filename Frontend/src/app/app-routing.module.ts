@@ -4,7 +4,8 @@ import { FileUploadComponent } from './shared/components/file-upload/file-upload
 import { TrainingDashboardComponent } from './shared/components/raw-data/training-dashboard/training-dashboard.component';
 import { BatchesComponent } from './shared/components/raw-data/batches/batches.component';
 import { EmployeesComponent } from './shared/components/raw-data/employees/employees.component';
-import { JobsComponent } from './shared/components/jobs/jobs.component';
+import { JobsComponent } from './shared/components/jobs/jobs/jobs.component';
+import { JobsDetailsComponent } from './shared/components/jobs/jobs-details/jobs-details.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'upload', pathMatch: 'full'},
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'raw-data/training-dashboard', component: TrainingDashboardComponent},
   {path: 'raw-data/batches', component: BatchesComponent},
   {path: 'raw-data/employees', component: EmployeesComponent},
-  {path: 'jobs', component: JobsComponent}
+  {path: 'jobs', component: JobsComponent},
+  { path: 'job-details/:jobId', component: JobsDetailsComponent },
 ];
 
 @NgModule({
