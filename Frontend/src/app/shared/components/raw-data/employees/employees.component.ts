@@ -88,7 +88,6 @@ export class EmployeesComponent implements OnInit {
       this.totalRecords = data.totalRecords;
       this.totalPages = data.totalPages;
       this.currentPage = data.currentPage;
-      console.log(this.storedEmployeeData)
     })
   }
 

@@ -26,7 +26,6 @@ export class JobsDetailsComponent implements OnInit {
     if (this.jobId !== null) {
       this.jobDetailsService.getJobDetails(this.jobId).subscribe((data) => {
         this.jobDetails = data;
-        console.log(data)
       });
     }
   }

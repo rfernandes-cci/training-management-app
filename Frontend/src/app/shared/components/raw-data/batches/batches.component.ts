@@ -75,12 +75,10 @@ export class BatchesComponent implements OnInit {
 
   batchData(page: number, noOfRecords?: number, selectedTechOption?: string, selectedStatus?: string) {
     this.batchService.getBatchData(page,noOfRecords, selectedTechOption, selectedStatus).subscribe((data)=> {
-      console.log(data);
       this.storeBatchData = data.records;
       this.totalPages = data.totalPages;
       this.totalRecords = data.totalRecords;
       this.currentPage = data.currentPage;
-      console.log(this.storeBatchData);
     })
   }
 
@@ -93,7 +91,6 @@ export class BatchesComponent implements OnInit {
   batchTechData() {
     this.batchesTechService.getAllTech().subscribe((data) => {
       this.storeBatchTech = data;
-      console.log(data)
     })
   }
 

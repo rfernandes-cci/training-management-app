@@ -33,7 +33,6 @@ export class JobsComponent implements OnInit {
       this.totalPages = data.totalPages;
       this.totalRecords = data.totalRecords;
       this.currentPage = data.currentPage;
-      console.log(data)
     });
   }
 

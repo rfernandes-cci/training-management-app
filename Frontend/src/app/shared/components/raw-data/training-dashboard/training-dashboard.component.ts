@@ -84,7 +84,6 @@ export class TrainingDashboardComponent implements OnInit {
       this.currentPage = data.currentPage;
       this.totalPages = data.totalPages;
       this.totalRecords = data.totalRecords;
-      console.log(data)
     }, error => {
       this.errBlock = true;
       this.errTxt = error.message;

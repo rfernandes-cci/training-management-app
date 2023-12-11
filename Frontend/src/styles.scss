@@ -28,7 +28,7 @@ body, html {
 .title-upload {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
-    margin: 0 0 30px;
+    margin: 0 0 50px;
 }
 
 thead th {
@@ -87,6 +87,13 @@ thead th {
 
 .btn-primary{
     border-radius: 0;
+
+    &.btn-light {
+        border: 1px solid #a6a6a6;
+        background: #e7f1fd;
+        letter-spacing: 1px;
+        color: #106eea;
+    }
 }
 
 .btn-primary.btn-filters {
@@ -96,5 +103,11 @@ thead th {
     &:active {
         background: none;
         color: #212529;
+    }
+}
+
+.text-md-right {
+    @include media-breakpoint-up(md) {
+        text-align: right;
     }
 }

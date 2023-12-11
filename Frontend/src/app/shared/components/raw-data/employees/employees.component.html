@@ -2,18 +2,26 @@
     <div class="row justify-content-center">
         <div class="col-10 box-layout my-5">
             <h4 class="text-center title-upload">Employees</h4>
-            <div ngbDropdown>
-                <button class="btn btn-primary btn-filters d-flex align-items-center option-btn mb-3 text-uppercase" id="selectButton" ngbDropdownToggle><span class="d-block w-100 text-center">{{selectedOption}}</span></button>
-                <div ngbDropdownMenu aria-labelledby="selectButton">
-                    <button class="dropdown-item" (click)="selectOption('Active')">Active</button>
-                    <button class="dropdown-item" (click)="selectOption('Resigned')">Resigned</button>
+            <div class="row">
+                <div class="col-md-6">
+                    <h6 class="mb-0">Filter By Employee Status:</h6>
+                    <div ngbDropdown>
+                        <button class="btn btn-primary btn-filters d-flex align-items-center option-btn mt-2 mb-5 text-uppercase" id="selectButton" ngbDropdownToggle><span class="d-block w-100 text-center">{{selectedOption}}</span></button>
+                        <div ngbDropdownMenu aria-labelledby="selectButton">
+                            <button class="dropdown-item" (click)="selectOption('Active')">Active</button>
+                            <button class="dropdown-item" (click)="selectOption('Resigned')">Resigned</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <button class="btn btn-primary btn-light mb-5" (click)="exportData()">Export to Excel</button>
                 </div>
             </div>
+
             <div class="form-group form-inline">
                 <input class="form-control ml-2 mb-3" type="text" name="searchTerm" [(ngModel)]="searchQuery" placeholder="Search by Name..."/>
                 <button class="btn btn-primary mb-5" (click)="onSearch()">Search</button>
             </div>
-            <button class="btn btn-primary mb-5" (click)="exportData()">Export to Excel</button>
             <div class="show-columns">
                 <h6 class="d-flex justify-content-between" (click)="collapse.toggle()"
                 [attr.aria-expanded]="!isCollapsed"

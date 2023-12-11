@@ -2,26 +2,32 @@
     <div class="row justify-content-center">
         <div class="col-10 box-layout my-5">
             <h4 class="text-center title-upload">Batches</h4>
-            <div class="d-flex flex-wrap my-4 align-items-center">
-                <h6 class="mb-0">Apply Filters:</h6>
-                <div class="tech-dropdown mt-2" ngbDropdown>
-                    <button class="btn btn-primary btn-filters d-flex align-items-center option-btn mx-3 text-uppercase" id="selectButton" ngbDropdownToggle>
-                        <span class="d-block w-100 text-center">{{selectedTechOption}}</span>
-                    </button>
-                    <div ngbDropdownMenu aria-labelledby="selectButton">
-                        <button class="dropdown-item" (click)="selectTechOption(data);searchOnTech()" *ngFor="let data of storeBatchTech">{{data}}</button>
+            <div class="row">
+                <div class="col-md-6 mb-5">
+                    <h6 class="mb-0">Filter By Technologies or Status:</h6>
+                    <div class="d-flex">
+                        <div class="tech-dropdown mt-2" ngbDropdown>
+                            <button class="btn btn-primary btn-filters d-flex align-items-center option-btn text-uppercase" id="selectButton" ngbDropdownToggle>
+                                <span class="d-block w-100 text-center">{{selectedTechOption}}</span>
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="selectButton">
+                                <button class="dropdown-item" (click)="selectTechOption(data);searchOnTech()" *ngFor="let data of storeBatchTech">{{data}}</button>
+                            </div>
+                        </div>
+                        <div class="status-dropdown mt-2" ngbDropdown>
+                            <button class="btn btn-primary btn-filters d-flex align-items-center option-btn mb-0 mx-3 text-uppercase" id="selectButton" ngbDropdownToggle>
+                                <span class="d-block w-100 text-center">{{selectedStatus}}</span>
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="selectButton">
+                                <button class="dropdown-item" (click)="selectStatus(data);searchOnStatus()" *ngFor="let data of storeBatchStatus">{{data}}</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="status-dropdown mt-2" ngbDropdown>
-                    <button class="btn btn-primary btn-filters d-flex align-items-center option-btn mb-0 text-uppercase" id="selectButton" ngbDropdownToggle>
-                        <span class="d-block w-100 text-center">{{selectedStatus}}</span>
-                    </button>
-                    <div ngbDropdownMenu aria-labelledby="selectButton">
-                        <button class="dropdown-item" (click)="selectStatus(data);searchOnStatus()" *ngFor="let data of storeBatchStatus">{{data}}</button>
-                    </div>
+                <div class="col-md-6 text-md-right">
+                    <button class="btn btn-primary btn-light mb-5" (click)="exportData()">Export to Excel</button>
                 </div>
             </div>
-            <button class="btn btn-primary mb-5" (click)="exportData()">Export to Excel</button>
             <div class="show-columns">
                 <h6 class="d-flex justify-content-between" (click)="collapse.toggle()"
                 [attr.aria-expanded]="!isCollapsed"
