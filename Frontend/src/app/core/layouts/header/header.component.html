@@ -13,12 +13,12 @@
       <div class="collapse navbar-collapse" [ngbCollapse]="isNavbarCollapsed" id="collapsibleNavbar">
         <ul class="navbar-nav justify-content-end w-100">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/upload" routerLinkActive="active">Upload</a>
+            <a class="nav-link" routerLink="/upload" routerLinkActive="active">Upload Files</a>
           </li>
           <!-- Dropdown -->
           <li class="nav-item" ngbDropdown>
             <a class="nav-link" ngbDropdownToggle [ngClass]="{ 'active': isParentActive() }">
-              Raw data
+              Data Hub
             </a>
             <div ngbDropdownMenu>
               <a class="dropdown-item" routerLink="/raw-data/training-dashboard" routerLinkActive="active">Training Dashboard</a>

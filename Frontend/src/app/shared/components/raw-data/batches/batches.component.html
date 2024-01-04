@@ -48,13 +48,13 @@
                     <thead>
                         <tr>
                             <th scope="col">Batch Title</th>
+                            <th scope="col">Training Coordinator</th>
                             <th scope="col">Technologies</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Start Date</th>
                             <th scope="col">End Date</th>
-                            <th scope="col">Training Coordinator</th>
                             <th scope="col">Head Trainer</th>
                             <th scope="col">No. of Trainees</th>
-                            <th scope="col">Status</th>
                             <th scope="col">Created At</th>
                             <th scope="col">ID</th>
                             <ng-container *ngFor="let checkbox of checkboxes">
@@ -70,14 +70,14 @@
                         </ng-container>
                         <tr *ngFor="let data of storeBatchData">
                             <td>{{ data.batchTitle }}</td>
+                            <td>{{ data.trainingCoordinator }}</td>
                             <td>{{ data.tech }}</td>
+                            <td>{{ data.status }}</td>
                             <td>{{ data.startDate | date }}</td>
                             <td *ngIf="data.endDate !== null">{{ data.endDate | date }}</td>
                             <td *ngIf="data.endDate === null">N/A</td>
-                            <td>{{ data.trainingCoordinator }}</td>
                             <td>{{ data.headTrainer }}</td>
                             <td>{{ data.NoOfTrainees  || 'N/A' }}</td>
-                            <td>{{ data.status }}</td>
                             <td>{{ data.createdAt | date }}</td>
                             <td>{{ data.id }}</td>
                             <td *ngIf="getCheckboxState('isProcessed')">{{ data.isProcessed}}</td>
